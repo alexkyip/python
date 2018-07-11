@@ -1,9 +1,8 @@
-#Guess The Number
+#Guess game challenge!
 
 import random
 
 secretNum = random.randint(1,10)
-number_of_guesses = 0
 number_of_guesses = number_of_guesses + 1 
 
 
