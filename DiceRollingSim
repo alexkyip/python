@@ -1,0 +1,20 @@
+#Program simulates rolling a dice. It will randomly select a number between 1 and 6 then ask if the user would like to roll again? 
+
+import random
+min = 1 
+max = 6
+
+question = input("Do you wish to roll the dice Y/N?")
+
+while question.upper() == 'Y':
+    print(random.randint(min,max))
+    question = input("Would you like to roll again?")
+
+else:
+    print("Thank you for playing! See you next time!")
+
+
+
+
+
+
