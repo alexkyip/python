@@ -1,9 +1,11 @@
-#Guess the number
+#Guess The Number
 
 import random
 
-secretNum = random.randint(1,11)
+secretNum = random.randint(1,10)
 number_of_guesses = 0
+number_of_guesses = number_of_guesses + 1 
+
 
 while number_of_guesses < 5:
     print("\nPlease guess a number from 1-10: ")
@@ -14,9 +16,6 @@ while number_of_guesses < 5:
         print("The number is too small.")
     elif guess > secretNum:
         print("The number is too big.")
-
-    elif guess == secretNum:
+    else:
         print("Congrats! You have guessed " + str(secretNum) + " as the mystery number.")
         break
-    else:
-        print("Sorry you did not guess right")  #At what point does this get called? Review Line!
