@@ -1,0 +1,22 @@
+#Guess the number
+
+import random
+
+secretNum = random.randint(1,11)
+number_of_guesses = 0
+
+while number_of_guesses < 5:
+    print("\nPlease guess a number from 1-10: ")
+    guess = input()
+    guess = int(guess)
+
+    if guess < secretNum:
+        print("The number is too small.")
+    elif guess > secretNum:
+        print("The number is too big.")
+
+    elif guess == secretNum:
+        print("Congrats! You have guessed " + str(secretNum) + " as the mystery number.")
+        break
+    else:
+        print("Sorry you did not guess right")  #At what point does this get called? Review Line!
