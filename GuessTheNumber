@@ -1,20 +1,44 @@
 #Guess game challenge!
+#Players get 5 guesses.
+#If player uses 5 guesses, he/she loses the game and program terminates
+#They must guess a random number.
+#It has to be a whole number from 1 to 10
+#Tell them if they are too high or too low if they guess wrong
+#Tell them how many guesses they have made
+
+
+
 
 import random
 
 secretNum = random.randint(1,10)
-number_of_guesses = number_of_guesses + 1 
+
+guesses_remaining = 5
+number_of_guesses = 0
+
+guess = (int(input('Please guess a number from 1-10: \n')))
 
 
-while number_of_guesses < 5:
-    print("\nPlease guess a number from 1-10: ")
-    guess = input()
-    guess = int(guess)
 
+while number_of_guesses != secretNum:
     if guess < secretNum:
-        print("The number is too small.")
+        print('The number is too low.')
+        guess = int(input('Please guess again.\n'))
+        number_of_guesses += 1
+        guesses_remaining -= 1
+        
+    
     elif guess > secretNum:
-        print("The number is too big.")
+        print('The number is too high.')
+        guess = int(input('Please guess again.\n'))
+        number_of_guesses += 1
+        guesses_remaining -= 1
+    
     else:
-        print("Congrats! You have guessed " + str(secretNum) + " as the mystery number.")
+        print('Congrats! You have guessed ' + str(secretNum) + ' as the mystery number."')
+        print('It only took you about ' + str(guess) + ' guess(es).')
+        break
+    
+    if guesses_remaining == 1:
+        print('You are out of turns. You lose!')
         break
